@@ -2,7 +2,7 @@
   font-family: "HouseSlant";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/HouseSlant.eot") format("embedded-opentype"), url("/fonts/HouseSlant.woff") format("woff");
+  src: url("../fonts/HouseSlant.eot") format("embedded-opentype"), url("../fonts/HouseSlant.woff") format("woff");
 }
 
 body {
@@ -30,6 +30,7 @@ h1 {
   display: block;
   opacity: 0;
   animation: .3s .3s show forwards;
+  font-weight: 100;
 }
 
 .secondline {
@@ -37,6 +38,7 @@ h1 {
   display: block;
   opacity: 0;
   animation: .3s .4s show forwards;
+  font-weight: bold;
 }
 
 .main {
