@@ -44,6 +44,7 @@ h1 {
   margin: 0 auto;
 }
 
+
 input[type="file"] {
   display: none;
 }
@@ -75,6 +76,15 @@ input[type="file"] {
 }
 .input-hint strong {
   text-decoration: underline;
+}
+
+.input-arrow {
+  position: absolute;
+  left: -170px;
+  width: 120px;
+  top: 10px;
+  opacity: 0;
+  animation: .3s 1.4s show forwards;
 }
 
 .processing {
