@@ -8,14 +8,21 @@
 </head>
 <body>
   <section class="main">
-    <h1>Let's draw some <strong>faces</strong></h1>
+    <h1>
+      <span class="firstline">Let's draw some</span>
+      <span class="secondline">faces</span>
+    </h1>
 
     <div class="inputwrapper">
         <input type="file"/>
         <button class="input">Select a file</button>
+        <div class="input-hint">
+          <strong>Hint:</strong> your picture should include a face</div>
     </div>
 
     <div class="loader"></div>
+
+    <div class="result"></div>
 
   </section>
   <script src="src/vendor/zepto.min.js"></script>
