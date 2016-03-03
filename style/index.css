@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "HouseSlant";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/HouseSlant.eot") format("embedded-opentype"), url("/fonts/HouseSlant.woff") format("woff");
+}
+
+body {
+  font-family: Montserrat;
+  background: #EE554F;
+  color: white;
+  text-align: center;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HouseSlant";
+}
+
+h1 {
+  font-size: 5em;
+  line-height: 0.8;
+  transform: rotate(-4deg);
+  -webkit-transform: rotate(-4deg);
+}
+
+h1 strong {
+  font-size: 1.8em;
+  display: block;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input {
+  font-size: 2em;
+  padding: 20px;
+  color: black;
+  background: white;
+  border: none;
+  font-family: inherit;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.2);
+  cursor: pointer;
+}
+
+.input:hover {
+  background: #f5f5f5;
+}
+
+.processing {
+  width: 60%;
+  margin: auto;
+  background: white;
+  height: 4px;
+  margin-top: 20px;
+}
+
+
+
+@keyframes loader-animation {
+  0% {
+    transform: translate(-50%, 0) scaleX(0.01) translate(50%, 0);
+  }
+  40% {
+    transform: scaleX(0.5);
+  }
+  100% {
+    transform: translate(50%, 0) scaleX(0.01) translate(-50%, 0);
+  }
+}
+
+.loader {
+  height: 5px;
+  width: 60%;
+  margin: 20px auto;
+
+}
+
+.loader::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: scaleX(0);
+  animation: .6s loader-animation infinite;
+  opacity: 0;
+  transition: .2s opacity;
+}
+
+.loader.loader--load::before {
+  opacity: 1;
+}

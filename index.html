@@ -3,10 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <title>VISION</title>
+  <link rel="stylesheet" href="style/index.css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <section class="main">
+    <h1>Let's draw some <strong>faces</strong></h1>
+
+    <div class="inputwrapper">
+        <input type="file"/>
+        <button class="input">Select a file</button>
+    </div>
+
+    <div class="loader"></div>
+
+  </section>
   <script src="src/vendor/zepto.min.js"></script>
   <script src="src/vendor/raphael.min.js"></script>
   <script src="src/index.js"></script>
+  <script>
+    $('button.input').click(function() {
+      $('input[type="file"]').trigger('click');
+    })
+
+    var startAnalyse = function() {
+      $('.loader').addClass("loader--load");
+    }
+
+    var stopAnalyse = function() {
+      $('.loader').removeClass("loader--load");
+    }
+  </script
 </body>
 </html>
