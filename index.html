@@ -14,7 +14,7 @@
     </h1>
 
     <div class="inputwrapper">
-      <input type="file"/>
+      <input type="file" onChange="gotFile()" />
       <button class="input">
         <img class="input-arrow" src="assets/img/rightarrow.png">
         Select a file
@@ -34,6 +34,10 @@
   <script src="src/vendor/raphael.min.js"></script>
   <script src="src/index.js"></script>
   <script>
+    var API_KEY = '<YOUR-API-KEY-HERE-PLEASE>';
+    var API_TYPE = "FACE_DETECTION";
+    var API_MAX_RESULTS = 10;
+
     $('button.input').click(function() {
       $('input[type="file"]').trigger('click');
     })
@@ -44,6 +48,41 @@
 
     var stopAnalyse = function() {
       $('.loader').removeClass("loader--load");
+    }
+
+    function gotFile() {
+      var file    = $('input[type=file]').prop('files')[0];
+      var reader  = new FileReader();
+
+      reader.addEventListener("load", function () {
+        var content = reader.result.split(',')[1];
+        var data = { "requests":[
+            {
+              "image":{ "content": content },
+              "features":[ { "type": API_TYPE, "maxResults": API_MAX_RESULTS } ]
+            }
+          ]}
+        $.ajax({
+          type: "POST",
+          contentType: 'application/json',
+          url: 'https://vision.googleapis.com/v1/images:annotate?key=' + API_KEY ,
+          data: JSON.stringify(data),
+          success: handleVisionResult
+        })
+      }, false);
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+
+    /*
+     *
+     * Start doing things with the Vision API response here!
+     *
+     */
+    function handleVisionResult(result) {
+        console.log('SUCCESS:', result)
     }
   </script
 </body>
