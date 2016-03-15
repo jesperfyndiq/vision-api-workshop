@@ -3,8 +3,9 @@ Welcome to the workshop about image recognition using Google's all new shiny :sp
 
 ### Getting started
 
-1. Set the `API_KEY` value in  `index.html` (we will email the key to you before the workshop)
-2. Open `index.html` in your favourite browser and start playing with the code!
+1. In your terminal do: `git clone https://github.com/TheCodePub/vision-api-workshop.git`
+1. Edit `index.html` and set the `API_KEY` value (we will email the key to you before the workshop)
+1. Open `index.html` in your favourite browser and start playing with the code!
 
 
 ### About the sample code
@@ -15,5 +16,6 @@ The sample code we provide will give you a kickstart to start sending requests t
 
 Now it's time to play with the code! If you don't know what to do, maybe try to build one of these ideas:
 
-* Use face detection and translate the response into a emoji. If you upload a happy face it should show :smiley:, etc.
-* Use face detection and try to draw the face using a graphics library (e.g [RaphaëlJS](http://dmitrybaranovskiy.github.io/raphael/))
+* Try to "translate" a face into an emoji
+* Use face detection and try to re-create/draw the face using a graphics library (e.g [RaphaëlJS](http://dmitrybaranovskiy.github.io/raphael/))
+* Try to detect and frame faces in a picture. You can look at the data in boundingPoly in the result of [faceAnnotations](https://cloud.google.com/vision/reference/rest/v1/images/annotate#FaceAnnotation)
